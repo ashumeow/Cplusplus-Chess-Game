@@ -1,4 +1,3 @@
-
 #include <graphics.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -101,8 +100,7 @@ void main()
 			  for(;;)
 			  {
 	       
-cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\
-\b\b\bEnter File name to save \n";
+cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to save \n";
 				cin>>strFileName;  //Enter File Name
 				fp=fopen(strFileName,"r+");
 				if(fp!=NULL)
@@ -145,8 +143,7 @@ cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\
 				for(;;)
 				{
 				 
-cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\
-\b\b\b\b\bEnter File name to Load \n";
+cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to Load \n";
 				  cin>>strFileName;
 				  fp=fopen(strFileName,"r+");
 				   if(fp==NULL)
@@ -263,43 +260,37 @@ cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\
 
 /////pawn/////
 
-     if(abs(board[y][x])>=9 &&
-abs(board[y][x])<=16){	//if piece selscted has value greater than 8
-and less than 17
+     if(abs(board[y][x])>=9 && abs(board[y][x])<=16){	//if piece selscted has value greater than 8 and less than 17
 				b = pawn(x,y,x1,y1);
-				}//end pawn
+				}
+				//end pawn
 
 //////horse//////
 
-		      else if(abs(board[y][x])==2 ||
-abs(board[y][x])==7){	   //if piece selscted has value 2 and 7
+		      else if(abs(board[y][x])==2 || abs(board[y][x])==7){	   //if piece selscted has value 2 and 7
 				b = horse(x,y,x1,y1);
 				}//end horse
 
 ////queen///
 
-		      else if(abs(board[y][x])==4){	////if piece
-selscted has value 4
+		      else if(abs(board[y][x])==4){	////if piece selscted has value 4
 				b = queen(x,y,x1,y1);
 				}//end queen
 ///king///
 
-		      else if(abs(board[y][x])==5){	//if piece
-selscted has value 5
+		      else if(abs(board[y][x])==5){	//if piece selscted has value 5
 				b = king(x,y,x1,y1);
 			 }//end king
 
 ///rook///
 
-		      else if(abs(board[y][x])==1 ||
-abs(board[y][x])==8){	   //if piece selscted has value 1 and 8
+		      else if(abs(board[y][x])==1 ||abs(board[y][x])==8){	   //if piece selscted has value 1 and 8
 				b = rook(x,y,x1,y1);
 				}//end rook
 
 ///bishop///
 
-		      else if(abs(board[y][x])==3 ||
-abs(board[y][x])==6){	   //if piece selscted has value 3 and 6
+		      else if(abs(board[y][x])==3 ||abs(board[y][x])==6){	   //if piece selscted has value 3 and 6
 				b = bishop(x,y,x1,y1);
 				}//end bishop
 
@@ -307,8 +298,7 @@ abs(board[y][x])==6){	   //if piece selscted has value 3 and 6
 	  if(abs(board[y][x])>=9 && abs(board[y][x])<=16){
 			     char pp;
 			    
-cout<<"\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\
-\bwhich piece Q,R,H,B";
+cout<<"\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b which piece Q,R,H,B";
 			      pp=getch();
 			      if(turn==0){
 			       if(pp=='r')
@@ -528,9 +518,7 @@ void initialize(){
 int horse(int x,int y,int x1,int y1)
 {
 	int a=0;
-	if((y1==y+2 && x1==x+1)||(y1==y+2 && x1==x-1)||(y1==y+1 &&
-x1==x+2)||(y1==y+1 && x1==x-2)||(y1==y-1 && x1==x+2)||(y1==y-1 &&
-x1==x-2)||(y1==y-2 && x1==x+1)||(y1==y-2 && x1==x-1)){
+	if((y1==y+2 && x1==x+1)||(y1==y+2 && x1==x-1)||(y1==y+1 && x1==x+2)||(y1==y+1 && x1==x-2)||(y1==y-1 && x1==x+2)||(y1==y-1 && x1==x-2)||(y1==y-2 && x1==x+1)||(y1==y-2 && x1==x-1)){
 		a = 1;
 		}
 	return a;
@@ -541,17 +529,13 @@ x1==x-2)||(y1==y-2 && x1==x+1)||(y1==y-2 && x1==x-1)){
 int king(int x,int y,int x1,int y1)
 {
      int a = 0;
-     if((y1==y+1 && x1==x)||(y1==y-1 && x1==x)||(y1==y+1 &&
-x1==x+1)||(y1==y+1 && x1==x-1)||(y1==y-1 && x1==x+1)||(y1==y-1 &&
-x1==x-1)||(y1==y && x1==x+1)||(y1==y && x1==x-1)){
+     if((y1==y+1 && x1==x)||(y1==y-1 && x1==x)||(y1==y+1 &&x1==x+1)||(y1==y+1 && x1==x-1)||(y1==y-1 && x1==x+1)||(y1==y-1 &&x1==x-1)||(y1==y && x1==x+1)||(y1==y && x1==x-1)){
 	a = 1;
 }
 /////CASTLING//////
 
      else
-if(board[y][x+1]==0&&board[y][x+2]==0&&(abs(board[y1][x1]) 
-==abs(board[y][x+3])==1||abs(board[y1][x1])==
-abs(board[y][x+3])==8)){
+if(board[y][x+1]==0&&board[y][x+2]==0&&(abs(board[y1][x1])==abs(board[y][x+3])==1||abs(board[y1][x1])== abs(board[y][x+3])==8)){
 
       return 2;
      }
@@ -613,8 +597,7 @@ int queen(int x,int y,int x1,int y1){
 	 return rook(x,y,x1,y1);
    }
    else if(abs(x1-x)==abs(y-y1)){ 
-  //if queen moves in diagnol
-direction
+  //if queen moves in diagnol direction
 	 return bishop(x,y,x1,y1);
    }
    else
