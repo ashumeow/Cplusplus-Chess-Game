@@ -3,8 +3,9 @@
 #include <cstdio>
 #include <iostream>
 #include <cinttypes>
-#include <cctype>		
-#include <memory>                
+#include <cctype>
+
+using namespace std;             
 
 int board[8][8],turn=0,count1=0,count2=0;
 int gameover();
@@ -23,7 +24,7 @@ int bishop(int x,int y,int x1,int y1);
 int queen(int x,int y,int x1,int y1);
 int king(int x,int y,int x1,int y1);
 
-void main()
+int main()
 {
 
 		//Graphics Initialization
@@ -100,19 +101,19 @@ void main()
 			  for(;;)
 			  {
 	       
-cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to save \n";
+std::cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to save \n";
 				cin>>strFileName;  //Enter File Name
 				fp=fopen(strFileName,"r+");
 				if(fp!=NULL)
 				{
-					cout<<"File already exist\n";
+					std::cout<<"File already exist\n";
 				}
 				else
 				{
 					   fp=fopen(strFileName,"w+");
 					   if(fp==NULL)
 					   {
-					   cout<<"Invalid File Name\n";
+					   std::cout<<"Invalid File Name\n";
 					   }
 					   else
 						break;
@@ -143,12 +144,12 @@ cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to
 				for(;;)
 				{
 				 
-cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to Load \n";
+std::cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to Load \n";
 				  cin>>strFileName;
 				  fp=fopen(strFileName,"r+");
 				   if(fp==NULL)
 				   {
-					 cout<<"File does not exist\n";
+					 std::cout<<"File does not exist\n";
 				   }
 				   else
 				   {
@@ -198,7 +199,7 @@ cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to
 		if(x==-1){
 			ch=toupper(ch);
 			if(ch>=65 && ch<=72){
-				cout<<ch;
+				std::cout<<ch;
 				x=ch-65;
 				}
 			}
@@ -206,7 +207,7 @@ cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to
 		{
 			if(ch>='1' && ch<='8')
 			{
-				cout<<ch;
+				std::cout<<ch;
 				y=ch-'1';
 				if(board[y][x]==0){
 					wrongStart();
@@ -237,7 +238,7 @@ cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to
 				}
 			}
 			if(x!=-1 && y!=-1)
-				cout<<"\nenter final position  ¯ ";
+				std::cout<<"\nenter final position  ¯ ";
 		}
 		else if(x1==-1)
 		{		//Converting lower to upper case
@@ -245,7 +246,7 @@ cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to
 			ch=toupper(ch);
 			if(ch>=65 && ch<=72)
 			{
-				cout<<ch;
+				std::cout<<ch;
 				x1=ch-65;
 			}
 		}
@@ -253,7 +254,7 @@ cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to
 		{
 			if(ch>='1' && ch<='8')
 			{
-				cout<<ch;
+				std::cout<<ch;
 				y1=ch-'1';
 			}
 		int b=0,killed=0;
@@ -298,7 +299,7 @@ cout<<"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b Enter File name to
 	  if(abs(board[y][x])>=9 && abs(board[y][x])<=16){
 			     char pp;
 			    
-cout<<"\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b which piece Q,R,H,B";
+std::cout<<"\n\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b which piece Q,R,H,B";
 			      pp=getch();
 			      if(turn==0){
 			       if(pp=='r')
@@ -438,7 +439,7 @@ void printboard(){
 	}
 void wrongStart()
 {
-	cout<<"\nWrong Input\nPress any key to continue...";
+	std::cout<<"\nWrong Input\nPress any key to continue...";
 	char ch=getch();
 	if(ch==0){
 		getch();
@@ -450,7 +451,7 @@ void wrongStart()
 			cout<<" ";
 		}
 	gotoxy(1,1);
-	cout<<"enter initial position ¯ ";
+	std::cout<<"enter initial position ¯ ";
 }
 
 /////ClearText////void cleartext(){
@@ -460,7 +461,7 @@ void wrongStart()
 			cout<<" ";
 			}
 	gotoxy(1,1);
-	cout<<"enter initial position ¯ ";
+	std::cout<<"enter initial position ¯ ";
 }
 
 /////Initialize////
