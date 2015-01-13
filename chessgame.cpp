@@ -1,10 +1,10 @@
-#include <graphics.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <iostream.h>
-#include <conio.h>
-#include <ctype.h>		//For toupper
-#include <dos.h>                //For Delay
+#include <cstddef>
+#include <cstdlib>
+#include <cstdio>
+#include <iostream>
+#include <cinttypes>
+#include <cctype>		
+#include <memory>                
 
 int board[8][8],turn=0,count1=0,count2=0;
 int gameover();
