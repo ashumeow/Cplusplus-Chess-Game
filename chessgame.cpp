@@ -5,7 +5,8 @@
 #include <cinttypes>
 #include <cctype>
 
-using namespace std;             
+namespace std
+{
 
 int board[8][8],turn=0,count1=0,count2=0;
 int gameover();
@@ -26,6 +27,7 @@ int king(int x,int y,int x1,int y1);
 
 int main()
 {
+	int DETECT, HORIZ_DIR;
 
 		//Graphics Initialization
 	int gdriver = DETECT;
@@ -48,9 +50,9 @@ int main()
 
 	//Displaying Group Members
 	setcolor(CYAN);
-	outtextxy(50,220,"Designed by:");
+	outtextxy(50,220,"Re-Designed by:");
 	setcolor(6);
-	outtextxy(50,250,"Atif Zia Khan");
+	outtextxy(50,250,"ashumeow");
 
 	//Displaying Roll Numbers
 	outtextxy(350,250,"L1F01BSCS0144");
@@ -820,4 +822,5 @@ int gameover(){
 		return 0;
 	}
 return 1;
+}
 }
